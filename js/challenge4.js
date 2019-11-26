@@ -6,7 +6,6 @@ $(document).ready(function(){
     if ($("#fullname").val() === '') {
       $("#nameerrormsg").show();
       // console.log("no name");
-      return false;
     }
     // returns name error message to hidden if field gets filled
     else {
@@ -17,14 +16,17 @@ $(document).ready(function(){
     if ($("#streetaddr").val() === '') {
       $("#addrerrormsg").show();
       // console.log("no address");
-      return false;
     }
     // returns address error message to hidden if field gets filled
     else {
       $("#addrerrormsg").hide();
     }
 
+    if ((!($("#streetaddr").val() === '')) && (!($("#fullname").val() === ''))) {
+      return true;
+    }
+
     // return true and let form submit if both textareas filled in
-    return true;
+    return false;
   });
 });
